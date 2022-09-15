@@ -1,6 +1,9 @@
 # Mail-Server-Attacks-Cheat-Sheet
 A cheat sheet that contains common enumeration and attack methods for Mail Server.
 
+![Mail Attacks](https://github.com/HadessCS/Mail-Server-Attacks-Cheat-Sheet/blob/main/mailattacks_cover.png)
+
+
 - [IMAP](#imap)
   * [Information Gathering](#information-gathering)
   * [Attacks](#attacks)
